@@ -1,0 +1,33 @@
+import java.util.*;
+public class main{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        //reading the size of array
+        int n=scan.nextInt();
+        //reading the k 
+        int k=scan.nextInt();
+        //reading the array elements
+        int[] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=scan.nextInt();
+        }
+        //Brute force solution
+        int[] temp=new temp[k];
+        for(int i=0;i<k;i++){
+            temp[i]=a[i];
+        }
+        //shifting the elements by k
+        for(int i=k;i<n;i++){
+            a[i-k]=a[i];
+        }
+        //by the above iteration, the first elements will be placed according to its position
+        //now placing the last elements
+        for(int i=n-k;i<n;i++){
+            a[i]=temp[i-(n-k)];
+        } 
+        //printing the elements of the rotated array 
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
